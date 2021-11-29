@@ -12,6 +12,7 @@ soup=BeautifulSoup(ele_wrd.get_attribute('innerHTML'),'html.parser')
 words = soup.find_all('div','word')
 text_block=' '.join(word.text for word in words)
 
+'''
 keep_going= True
 while keep_going:
     try:
@@ -31,3 +32,9 @@ while keep_going:
         text_block = text_block[text_block.index(search_string)].replace(search_string,'')
     except:
         keep_going=False
+'''
+pyautogui.moveTo(800,1000)
+pyautogui.click()
+pyautogui.click()
+for i in range(0,len(text_block)):
+    pyautogui.write(text_block[i])
